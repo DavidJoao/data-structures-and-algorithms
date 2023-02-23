@@ -16,9 +16,13 @@ class LinkedList {
     }
 
     //Insert First Node
-
+    insertFirst = (data) => {
+        this.head = new Node(data, this.head)
+    }
     //Insert Last Node
-
+    insertLast = (data) => {
+        this.next = new Node(data, this.next)
+    }
     //Insert at a specific index
 
     //Get at specific index
@@ -28,4 +32,12 @@ class LinkedList {
     //Clear the list
 
     //Print all list data
+    printListData = () => {
+        let current = this.head
+
+        while(current){
+            console.log(current.data)
+            current = current.next
+        }
+    }
 }
