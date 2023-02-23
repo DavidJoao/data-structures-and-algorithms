@@ -34,6 +34,32 @@ class LinkedList {
     }
     //Insert at a specific index
 
+    insertAt(data, index){
+        // Returns if index is greater than size
+        if(index > 0 && index > this.size){
+            return;
+        } 
+
+        if (index == 0) {
+            this.insertFirst(data)
+        }
+
+        const node = new Node(data);
+        let current, prev;
+        current = this.head;
+        let count = 0;
+        while(count < index){
+            prev = current;
+            count++;
+            current = current.next;
+        }
+
+        node.next = current;
+        prev.next = node;
+
+        this.size++;
+    }
+
     //Get at specific index
 
     //Remove specific node by index
