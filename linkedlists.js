@@ -5,10 +5,6 @@ class Node {
     }
 }
 
-const nodeOne = new Node(100)
-const nodeTwo = new Node(200)
-const nodeThree = new Node(300)
-
 class LinkedList {
     constructor(){
         this.head = null;
@@ -18,10 +14,23 @@ class LinkedList {
     //Insert First Node
     insertFirst = (data) => {
         this.head = new Node(data, this.head)
+        this.size++;
     }
     //Insert Last Node
     insertLast = (data) => {
-        this.next = new Node(data, this.next)
+        let node = new Node(data);
+        let current;
+
+        if(!this.head){
+            this.head = node;
+        } else {
+            current = this.head;
+            while(current.next){
+                current = current.next
+            }
+            current.next = node;
+        }
+        this.size++; 
     }
     //Insert at a specific index
 
@@ -41,3 +50,9 @@ class LinkedList {
         }
     }
 }
+
+const myLinkedList = new LinkedList();
+
+myLinkedList.insertFirst(100)
+myLinkedList.insertLast(300)
+myLinkedList.printListData()
