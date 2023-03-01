@@ -27,7 +27,8 @@ let Queue = function(){
     }
 
     this.print = function(){
-
+        const items = this.items.map(element => console.log(element))
+        return items
     }
 }
 
@@ -41,3 +42,4 @@ newQueue.enqueue(300)
 newQueue.size()
 newQueue.front()
 newQueue.isEmpty()
+newQueue.print()
