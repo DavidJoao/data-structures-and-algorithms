@@ -3,16 +3,17 @@ let Queue = function(){
 
     this.enqueue = function(item){
         console.log(`${item} added to Queue`)
-        this.items.push(item)
+        return this.items.push(item)
     }
 
     this.dequeue = function (){
         console.log(`${this.items[0]} removed from Queue`)
-        this.items.shift()
+        return this.items.shift()
     }
 
     this.size = function(){
-
+        console.log(`Queue size: ${this.items.length}`)
+        return this.items.length
     }
 
     this.front = function(){
@@ -31,4 +32,7 @@ let Queue = function(){
 let newQueue = new Queue()
 
 newQueue.enqueue(100)
+newQueue.enqueue(100)
+newQueue.enqueue(100)
 newQueue.dequeue()
+newQueue.size()
