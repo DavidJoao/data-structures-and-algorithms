@@ -32,6 +32,21 @@ function LinkedList(){
         length++;
     }
 
-    
+    this.remove = function(element){
+        let currentNode = head;
+        let previousNode;
+
+        if(currentNode.element === element){
+            head = currentNode.next;
+        } else {
+            while(currentNode.element !== element){
+                previousNode = currentNode;
+                currentNode = currentNode.next;
+            }
+            previousNode.next = currentNode.next;
+        }
+        length--;
+    }
+     
 
 }
