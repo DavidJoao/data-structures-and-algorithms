@@ -24,6 +24,21 @@ let Stack = function(){
             console.log(this.items[i])
         }
     }
+
+    this.length = function(){
+        let stackLength = this.items.length
+        console.log(stackLength)
+        return stackLength
+    }
 }
 
 let myStack = new Stack
+
+myStack.push(100)
+myStack.push(100)
+myStack.push(100)
+myStack.push(100)
+myStack.push(100)
+myStack.push(100)
+
+myStack.length()
