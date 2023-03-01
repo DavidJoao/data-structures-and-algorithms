@@ -17,11 +17,13 @@ let Queue = function(){
     }
 
     this.front = function(){
-
+        console.log(`Top element in Queue: ${this.items[0]}`)
+        return this.items[0]
     }
 
     this.isEmpty = function(){
-
+        console.log(this.items.length === 0)
+        return this.items.length === 0;
     }
 
     this.print = function(){
@@ -35,4 +37,7 @@ newQueue.enqueue(100)
 newQueue.enqueue(100)
 newQueue.enqueue(100)
 newQueue.dequeue()
+newQueue.enqueue(300)
 newQueue.size()
+newQueue.front()
+newQueue.isEmpty()
