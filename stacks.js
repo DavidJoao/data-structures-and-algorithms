@@ -10,12 +10,20 @@ let Stack = function(){
 
     this.pop = function(){
         console.log(`${this.items[this.count - 1]} deleted from Stack`)
-        delete this.items[this.count]
+        delete this.items[this.count - 1]
         this.count--;
+    }
+
+    this.peek = function(){
+        console.log(this.items[this.count - 1])
+        return this.items[this.count]
+    }
+
+    this.list = function(){
+        for(let i = 0; i < this.items.length; i++){
+            console.log(this.items[i])
+        }
     }
 }
 
 let myStack = new Stack
-myStack.push(100)
-myStack.push(300)
-myStack.pop()
