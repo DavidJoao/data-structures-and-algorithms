@@ -33,13 +33,23 @@ class Stack {
         console.log(this.items.length == 0);
         return this.items.length == 0
     }
+
+    size(){
+        console.log(this.count);
+        return this.count
+    }
+
+    print(){
+        for(let i = 0; i < this.items.length; i++){
+            console.log(this.items[i])
+        }
+    }
 }
 
 const stack = new Stack()
 
-stack.isEmpty()
 stack.push(100)
 stack.push(200)
-stack.peek()
 stack.push(300)
 stack.pop()
+stack.print()
